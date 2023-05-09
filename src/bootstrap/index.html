@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voting System</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Example Voting System Dapp</h1>
+        <div class="text-center">
+          <button type="button" name="button" class="btn btn-primary" id="btn-connect">Connect Metamask Wallet
+        </div>
+        <div class="text-center" >
+          <p class="text-center" style="display:none;" id="connected-account">Connected Account</p>
+        </div>
+      </div>
+
+    </div>
+    <div style="position: absolute; top: 10%; right: 0;">
+      <div class="alert toast alert-warning alert-dismissible fade hide" role="alert" data-delay="1000">
+        <strong>This is empty!</strong> Proposal should not be empty.
+      </div>
+    </div>
+    <hr />
+    <br />
+
+    <div class="row">
+      <div class="col-12">
+        <div class="input-group">
+          <input type="text" class="form-control input-value" name="input" placeholder="New proposal..." value="">
+          <div class="input-group-btn">
+            <button type="button" name="button" class="btn btn-primary btn-value">Add Proposal
+
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <br />
+
+    <div id="wrapperProposals">
+    </div>
+
+  </div>
+
+  <div class="card " id="proposalTemplate" style="display:none;">
+    <div class="row">
+      <div class="col-12" style="text-align: center;">
+        <h2 class="title">Example</h2>
+
+        <h5>Proposed By: <strong><span class="proposed-by"> address</span></strong>
+        </h5>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <p>Approve votes: <span class="numVotesPos">0</span></p>
+          </div>
+          <div class="col-6">
+            <button type="button" name="button" data-vote="true" data-proposal=""
+              data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing..."
+              class="btn btn-success btn-vote">Approve</button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-6">
+            <p>Against votes: <span class="numVotesNeg">0</span></p>
+          </div>
+          <div class="col-6">
+            <button type="button" name="button" data-vote="false" data-proposal=""
+              data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing..."
+              class="btn btn-danger btn-vote">Against</button>
+          </div>
+        </div>
+        <br>
+
+      </div>
+    </div>
+    <hr />
+    <br />
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
